@@ -1,0 +1,7 @@
+# Node.js modules
+node_modules
+
+.env
+
+dist.zip
+dist/

@@ -1,0 +1,1756 @@
+{
+	"info": {
+		"_postman_id": "db1ed6f3-298f-4dda-8576-4d4ec1fef7a7",
+		"name": "e-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38917015"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "329"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"149-vmU9MnYzPmYytHG50wENuiscfqg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:42:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"672cc3acbb8bb89e108ce5ec\",\n            \"name\": \"Fashion\",\n            \"createdAt\": \"2024-11-07T13:42:04.546Z\",\n            \"updatedAt\": \"2024-11-07T13:42:04.546Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"672cc3c9bb8bb89e108ce5ee\",\n            \"name\": \"Electronics\",\n            \"createdAt\": \"2024-11-07T13:42:33.103Z\",\n            \"updatedAt\": \"2024-11-07T13:42:33.103Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"Success get all categories\"\n}"
+						},
+						{
+							"name": "after deletion",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "191"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bf-K1RNWMft44DMZZ0V6U0geWKBCQo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:44:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"672cc3c9bb8bb89e108ce5ee\",\n            \"name\": \"Electronics\",\n            \"createdAt\": \"2024-11-07T13:42:33.103Z\",\n            \"updatedAt\": \"2024-11-07T13:42:33.103Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"Success get all categories\"\n}"
+						}
+					]
+				},
+				{
+					"name": "category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Fashion\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Fashion\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b6-wVy43ryOGabbdfYM+aW21LJ8Dyo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:42:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"name\": \"Fashion\",\n        \"_id\": \"672cc3acbb8bb89e108ce5ec\",\n        \"createdAt\": \"2024-11-07T13:42:04.546Z\",\n        \"updatedAt\": \"2024-11-07T13:42:04.546Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Success create category\"\n}"
+						}
+					]
+				},
+				{
+					"name": "category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Fashion Female\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/categories/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "672cc50ebb8bb89e108ce5f6"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Fashion Female\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "672cc3acbb8bb89e108ce5ec"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "189"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bd-sU/+HapQSKS2KX+LAm2hWCM9LPM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:43:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"672cc3acbb8bb89e108ce5ec\",\n        \"name\": \"Fashion Female\",\n        \"createdAt\": \"2024-11-07T13:42:04.546Z\",\n        \"updatedAt\": \"2024-11-07T13:43:46.688Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Success update category\"\n}"
+						}
+					]
+				},
+				{
+					"name": "category by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/categories/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "672cc50ebb8bb89e108ce5f6"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:3000/api/categories/1\n"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/categories/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "672cc3acbb8bb89e108ce5ec"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "190"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"be-e3Vitjqb/Q54/FI6sAh8FypL5HE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:44:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"672cc3acbb8bb89e108ce5ec\",\n        \"name\": \"Fashion Female\",\n        \"createdAt\": \"2024-11-07T13:42:04.546Z\",\n        \"updatedAt\": \"2024-11-07T13:43:46.688Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Success get one category\"\n}"
+						}
+					]
+				},
+				{
+					"name": "category by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/categories/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:3000/api/categories/1\n"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/categories/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "672cc3acbb8bb89e108ce5ec"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "189"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bd-U4pQiFz4BjF8OE1yUzG6EbXRfUY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:44:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"672cc3acbb8bb89e108ce5ec\",\n        \"name\": \"Fashion Female\",\n        \"createdAt\": \"2024-11-07T13:42:04.546Z\",\n        \"updatedAt\": \"2024-11-07T13:43:46.688Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Success delete category\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/products?page=1&limit=1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "329"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"149-vmU9MnYzPmYytHG50wENuiscfqg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:42:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"672e1d8d67f68c1a07655334\",\n            \"name\": \"Abaya\",\n            \"description\": \"daster\",\n            \"images\": [],\n            \"price\": 100000,\n            \"qty\": 10,\n            \"category\": {\n                \"_id\": \"672cc50ebb8bb89e108ce5f6\",\n                \"name\": \"Fashion Female\",\n                \"createdAt\": \"2024-11-07T13:47:58.219Z\",\n                \"updatedAt\": \"2024-11-07T13:49:06.393Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-11-08T14:17:49.038Z\",\n            \"updatedAt\": \"2024-11-08T14:17:49.038Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"672e1e5758d68660a938d21d\",\n            \"name\": \"Abaya Gamis\",\n            \"description\": \"daster\",\n            \"images\": [],\n            \"price\": 100000,\n            \"qty\": 10,\n            \"category\": {\n                \"_id\": \"672cc50ebb8bb89e108ce5f6\",\n                \"name\": \"Fashion Female\",\n                \"createdAt\": \"2024-11-07T13:47:58.219Z\",\n                \"updatedAt\": \"2024-11-07T13:49:06.393Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-11-08T14:21:11.860Z\",\n            \"updatedAt\": \"2024-11-08T14:21:11.860Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"Success get all products\"\n}"
+						},
+						{
+							"name": "after update",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/products",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"products"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "762"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2fa-4adFe6uYKMhJg9qQLre1+b7NSD0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2024 14:23:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"_id\": \"672e1d8d67f68c1a07655334\",\n            \"name\": \"Abaya\",\n            \"description\": \"daster\",\n            \"images\": [],\n            \"price\": 100000,\n            \"qty\": 10,\n            \"category\": {\n                \"_id\": \"672cc50ebb8bb89e108ce5f6\",\n                \"name\": \"Fashion Female\",\n                \"createdAt\": \"2024-11-07T13:47:58.219Z\",\n                \"updatedAt\": \"2024-11-07T13:49:06.393Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-11-08T14:17:49.038Z\",\n            \"updatedAt\": \"2024-11-08T14:17:49.038Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"672e1e5758d68660a938d21d\",\n            \"name\": \"Abaya Gamis Import\",\n            \"description\": \"daster\",\n            \"images\": [],\n            \"price\": 100000,\n            \"qty\": 10,\n            \"category\": {\n                \"_id\": \"672cc50ebb8bb89e108ce5f6\",\n                \"name\": \"Fashion Female\",\n                \"createdAt\": \"2024-11-07T13:47:58.219Z\",\n                \"updatedAt\": \"2024-11-07T13:49:06.393Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-11-08T14:21:11.860Z\",\n            \"updatedAt\": \"2024-11-08T14:22:57.599Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"Success get all products\"\n}"
+						}
+					]
+				},
+				{
+					"name": "product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Abaya import\",\n    \"description\": \"Deskripsi gamis variant terbaru\",\n    \"category_id\": \"672cc50ebb8bb89e108ce5f6\",\n    \"slug\": \"abaya-import\",\n    \"qty\": 100,\n    \"price\": 2000\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Kemeja Variant 3\",\n    \"description\": \"Deskripsi kemeja variant 3\",\n    \"slug\": \"variant-3-slug\",\n    \"qty\": 100,\n    \"price\": 1000\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b6-wVy43ryOGabbdfYM+aW21LJ8Dyo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:42:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"name\": \"Kemeja Variant 3\",\n        \"description\": \"Deskripsi kemeja variant 3\",\n        \"images\": [],\n        \"price\": 1000,\n        \"qty\": 100,\n        \"_id\": \"673dbbac5b100dc6a2efc25e\",\n        \"createdAt\": \"2024-11-20T10:36:28.955Z\",\n        \"updatedAt\": \"2024-11-20T10:36:28.955Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Success create product\"\n}"
+						}
+					]
+				},
+				{
+					"name": "product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Abaya Gamis Import\",\n        \"description\": \"daster\",\n        \"images\": [],\n        \"price\": 100000,\n        \"qty\": 1000000,\n        \"category\": \"672cc50ebb8bb89e108ce5f6\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/products/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "672e1e5758d68660a938d21d"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Fashion Female\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "672cc3acbb8bb89e108ce5ec"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "189"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bd-sU/+HapQSKS2KX+LAm2hWCM9LPM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:43:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"672e1e5758d68660a938d21d\",\n        \"name\": \"Abaya Gamis Import\",\n        \"description\": \"daster\",\n        \"images\": [],\n        \"price\": 100000,\n        \"qty\": 10,\n        \"category\": \"672cc50ebb8bb89e108ce5f6\",\n        \"createdAt\": \"2024-11-08T14:21:11.860Z\",\n        \"updatedAt\": \"2024-11-08T14:22:57.599Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Success update product\"\n}"
+						}
+					]
+				},
+				{
+					"name": "product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "672e1e5758d68660a938d21d"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:3000/api/categories/1\n"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/categories/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "672cc3acbb8bb89e108ce5ec"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "190"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"be-e3Vitjqb/Q54/FI6sAh8FypL5HE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:44:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"672e1e5758d68660a938d21d\",\n        \"name\": \"Abaya Gamis Import\",\n        \"description\": \"daster\",\n        \"images\": [],\n        \"price\": 100000,\n        \"qty\": 10,\n        \"category\": {\n            \"_id\": \"672cc50ebb8bb89e108ce5f6\",\n            \"name\": \"Fashion Female\",\n            \"createdAt\": \"2024-11-07T13:47:58.219Z\",\n            \"updatedAt\": \"2024-11-07T13:49:06.393Z\",\n            \"__v\": 0\n        },\n        \"createdAt\": \"2024-11-08T14:21:11.860Z\",\n        \"updatedAt\": \"2024-11-08T14:22:57.599Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Success get one product\"\n}"
+						}
+					]
+				},
+				{
+					"name": "product by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "672e1d2967f68c1a0765532f"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:3000/api/categories/1\n"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/categories/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "672cc3acbb8bb89e108ce5ec"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "189"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bd-U4pQiFz4BjF8OE1yUzG6EbXRfUY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 13:44:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"672cc3acbb8bb89e108ce5ec\",\n        \"name\": \"Fashion Female\",\n        \"createdAt\": \"2024-11-07T13:42:04.546Z\",\n        \"updatedAt\": \"2024-11-07T13:43:46.688Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Success delete category\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"radit@mail.com\",\n  \"fullName\": \"Raditya\",\n  \"password\": \"12341234\",\n  \"confirmPassword\": \"12341234\",\n  \"username\": \"raditya2024\",\n  \"role\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"dania@mail.com\",\n  \"fullName\": \"Dania\",\n  \"password\": \"12341234\",\n  \"confirmPassword\": \"12341234\",\n  \"username\": \"dania2024\",\n  \"role\": \"user\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"113-4/CigAkDm5zZTk8meon8z6jbeDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Nov 2024 10:11:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"registration success!\",\n    \"data\": {\n        \"fullName\": \"Dania\",\n        \"username\": \"dania2024\",\n        \"email\": \"dania@mail.com\",\n        \"roles\": [\n            \"user\"\n        ],\n        \"profilePicture\": \"user.jpg\",\n        \"_id\": \"67371e5e2240fef19772a969\",\n        \"createdAt\": \"2024-11-15T10:11:42.319Z\",\n        \"updatedAt\": \"2024-11-15T10:11:42.319Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "register admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"dea@mail.com\",\n  \"fullName\": \"Dea\",\n  \"password\": \"12341234\",\n  \"confirmPassword\": \"12341234\",\n  \"username\": \"dea2024\",\n  \"role\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "269"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10d-0Q8lsrQ2fZTVmBNVy0PXPlBZ6uU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Nov 2024 10:37:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"registration success!\",\n    \"data\": {\n        \"fullName\": \"Dea\",\n        \"username\": \"dea2024\",\n        \"email\": \"dea@mail.com\",\n        \"roles\": [\n            \"user\"\n        ],\n        \"profilePicture\": \"user.jpg\",\n        \"_id\": \"6737245175d0fb4ac845e3d4\",\n        \"createdAt\": \"2024-11-15T10:37:05.825Z\",\n        \"updatedAt\": \"2024-11-15T10:37:05.825Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Extract the token from the response body",
+									"var jsonResponse = pm.response.json();",
+									"var token = jsonResponse.data;",
+									"",
+									"// Set the token as an environment variable",
+									"pm.environment.set(\"auth_token\", token);",
+									"",
+									"// Optionally, log the token to the console for verification",
+									"console.log(\"Auth Token:\", token);",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"dania@mail.com\",\n  \"password\": \"12341234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"dania@mail.com\",\n  \"password\": \"12341234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "230"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e6-F5xduXm9mqay1Q6oz8HJxwKmzro\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Nov 2024 10:12:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"login success\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3M2IzMmNhYTE1YzY1NDY2MzI2MDM4YiIsInJvbGVzIjpbInVzZXIiXSwiaWF0IjoxNzMxOTMyODk0LCJleHAiOjE3MzE5MzY0OTR9.PWjVpSNu_TIk7QjEWia9zFkavxdgvlV2c8bSH-wop-I\"\n}"
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/me",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "e.g profile",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/auth/me",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"118-zMLJWoUbZIrSHNEgTh4VsMiT6iw\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Nov 2024 10:13:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success fetch user profile\",\n    \"data\": {\n        \"_id\": \"673b32caa15c65466326038b\",\n        \"fullName\": \"Momon Kentang\",\n        \"username\": \"momonkentang\",\n        \"email\": \"momon@mail.com\",\n        \"roles\": [\n            \"user\"\n        ],\n        \"profilePicture\": \"user.jpg\",\n        \"createdAt\": \"2024-11-18T12:27:54.395Z\",\n        \"updatedAt\": \"2024-11-18T12:27:54.395Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"password\": \"123412345\",\n  \"confirmPassword\": \"123412345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/update-profile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "e.g order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"118-zMLJWoUbZIrSHNEgTh4VsMiT6iw\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Nov 2024 10:13:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"673dfaec6a1d5fddf00f87f3\",\n            \"grandTotal\": 300000,\n            \"orderItems\": [\n                {\n                    \"name\": \"Abaya Gamis Import\",\n                    \"productId\": \"672e1e5758d68660a938d21d\",\n                    \"price\": 100000,\n                    \"quantity\": 3,\n                    \"_id\": \"673dfaec6a1d5fddf00f87f0\"\n                }\n            ],\n            \"createdBy\": \"673b32caa15c65466326038b\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2024-11-20T15:06:20.541Z\",\n            \"updatedAt\": \"2024-11-20T15:06:20.541Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grandTotal\": 0,\n    \"orderItems\": [\n        {\n            \"productId\": \"672e1e5758d68660a938d21d\",\n            \"name\": \"Abaya Gamis Import\",\n            \"price\": 100000,\n            \"quantity\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"grandTotal\": 0,\n    \"orderItems\": [\n        {\n            \"productId\": \"672e1e5758d68660a938d21d\",\n            \"name\": \"Abaya Gamis Import\",\n            \"price\": 100000,\n            \"quantity\": 1\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"187-HCC4g/zDOPh5KAHbGUiUeHbed+k\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Nov 2024 16:22:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"grandTotal\": 100000,\n        \"orderItems\": [\n            {\n                \"name\": \"Abaya Gamis Import\",\n                \"productId\": \"672e1e5758d68660a938d21d\",\n                \"price\": 100000,\n                \"quantity\": 1,\n                \"_id\": \"673e0cbd2436099e194e8118\"\n            }\n        ],\n        \"createdBy\": \"673e009286f422fafcb50f3f\",\n        \"status\": \"pending\",\n        \"_id\": \"673e0cbd2436099e194e811b\",\n        \"createdAt\": \"2024-11-20T16:22:21.968Z\",\n        \"updatedAt\": \"2024-11-20T16:22:21.968Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

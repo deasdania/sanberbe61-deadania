@@ -1,0 +1,1691 @@
+openapi: 3.0.3
+info:
+  title: e-commerce
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/categories:
+    get:
+      tags:
+        - categories
+      summary: categories
+      description: categories
+      operationId: categories
+      parameters:
+        - name: ''
+          in: query
+          schema:
+            type: string
+            example: ''
+      responses:
+        '200':
+          description: success / after deletion
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '191'
+            Date:
+              schema:
+                type: string
+                example: Thu, 07 Nov 2024 13:44:37 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"bf-K1RNWMft44DMZZ0V6U0geWKBCQo"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        __v:
+                          type: number
+                          example: 0
+                        _id:
+                          type: string
+                          example: 672cc3acbb8bb89e108ce5ec
+                        createdAt:
+                          type: string
+                          example: '2024-11-07T13:42:04.546Z'
+                        name:
+                          type: string
+                          example: Fashion
+                        updatedAt:
+                          type: string
+                          example: '2024-11-07T13:42:04.546Z'
+                    example:
+                      - __v: 0
+                        _id: 672cc3acbb8bb89e108ce5ec
+                        createdAt: '2024-11-07T13:42:04.546Z'
+                        name: Fashion
+                        updatedAt: '2024-11-07T13:42:04.546Z'
+                      - __v: 0
+                        _id: 672cc3c9bb8bb89e108ce5ee
+                        createdAt: '2024-11-07T13:42:33.103Z'
+                        name: Electronics
+                        updatedAt: '2024-11-07T13:42:33.103Z'
+                  message:
+                    type: string
+                    example: Success get all categories
+              examples:
+                after deletion:
+                  value:
+                    data:
+                      - __v: 0
+                        _id: 672cc3c9bb8bb89e108ce5ee
+                        createdAt: '2024-11-07T13:42:33.103Z'
+                        name: Electronics
+                        updatedAt: '2024-11-07T13:42:33.103Z'
+                    message: Success get all categories
+                success:
+                  value:
+                    data:
+                      - __v: 0
+                        _id: 672cc3acbb8bb89e108ce5ec
+                        createdAt: '2024-11-07T13:42:04.546Z'
+                        name: Fashion
+                        updatedAt: '2024-11-07T13:42:04.546Z'
+                      - __v: 0
+                        _id: 672cc3c9bb8bb89e108ce5ee
+                        createdAt: '2024-11-07T13:42:33.103Z'
+                        name: Electronics
+                        updatedAt: '2024-11-07T13:42:33.103Z'
+                    message: Success get all categories
+    post:
+      tags:
+        - categories
+      summary: category
+      description: category
+      operationId: category
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Fashion
+            examples:
+              category:
+                value:
+                  name: Fashion
+      responses:
+        '201':
+          description: success
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '182'
+            Date:
+              schema:
+                type: string
+                example: Thu, 07 Nov 2024 13:42:04 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"b6-wVy43ryOGabbdfYM+aW21LJ8Dyo"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 672cc3acbb8bb89e108ce5ec
+                      createdAt:
+                        type: string
+                        example: '2024-11-07T13:42:04.546Z'
+                      name:
+                        type: string
+                        example: Fashion
+                      updatedAt:
+                        type: string
+                        example: '2024-11-07T13:42:04.546Z'
+                  message:
+                    type: string
+                    example: Success create category
+              examples:
+                success:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 672cc3acbb8bb89e108ce5ec
+                      createdAt: '2024-11-07T13:42:04.546Z'
+                      name: Fashion
+                      updatedAt: '2024-11-07T13:42:04.546Z'
+                    message: Success create category
+      security:
+        - bearerAuth: []
+  /api/categories/{id}:
+    get:
+      tags:
+        - categories
+      summary: category by id
+      description: |
+        Generated from cURL: curl -X GET http://localhost:3000/api/categories/1
+      operationId: categoryById
+      responses:
+        '200':
+          description: success
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '190'
+            Date:
+              schema:
+                type: string
+                example: Thu, 07 Nov 2024 13:44:04 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"be-e3Vitjqb/Q54/FI6sAh8FypL5HE"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 672cc3acbb8bb89e108ce5ec
+                      createdAt:
+                        type: string
+                        example: '2024-11-07T13:42:04.546Z'
+                      name:
+                        type: string
+                        example: Fashion Female
+                      updatedAt:
+                        type: string
+                        example: '2024-11-07T13:43:46.688Z'
+                  message:
+                    type: string
+                    example: Success get one category
+              examples:
+                success:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 672cc3acbb8bb89e108ce5ec
+                      createdAt: '2024-11-07T13:42:04.546Z'
+                      name: Fashion Female
+                      updatedAt: '2024-11-07T13:43:46.688Z'
+                    message: Success get one category
+    put:
+      tags:
+        - categories
+      summary: category
+      description: category
+      operationId: category1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Fashion Female
+            examples:
+              category:
+                value:
+                  name: Fashion Female
+      responses:
+        '200':
+          description: success
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '189'
+            Date:
+              schema:
+                type: string
+                example: Thu, 07 Nov 2024 13:43:46 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"bd-sU/+HapQSKS2KX+LAm2hWCM9LPM"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 672cc3acbb8bb89e108ce5ec
+                      createdAt:
+                        type: string
+                        example: '2024-11-07T13:42:04.546Z'
+                      name:
+                        type: string
+                        example: Fashion Female
+                      updatedAt:
+                        type: string
+                        example: '2024-11-07T13:43:46.688Z'
+                  message:
+                    type: string
+                    example: Success update category
+              examples:
+                success:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 672cc3acbb8bb89e108ce5ec
+                      createdAt: '2024-11-07T13:42:04.546Z'
+                      name: Fashion Female
+                      updatedAt: '2024-11-07T13:43:46.688Z'
+                    message: Success update category
+      security:
+        - bearerAuth: []
+    delete:
+      tags:
+        - categories
+      summary: category by id
+      description: |
+        Generated from cURL: curl -X GET http://localhost:3000/api/categories/1
+      operationId: categoryById1
+      responses:
+        '200':
+          description: success
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '189'
+            Date:
+              schema:
+                type: string
+                example: Thu, 07 Nov 2024 13:44:20 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"bd-U4pQiFz4BjF8OE1yUzG6EbXRfUY"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 672cc3acbb8bb89e108ce5ec
+                      createdAt:
+                        type: string
+                        example: '2024-11-07T13:42:04.546Z'
+                      name:
+                        type: string
+                        example: Fashion Female
+                      updatedAt:
+                        type: string
+                        example: '2024-11-07T13:43:46.688Z'
+                  message:
+                    type: string
+                    example: Success delete category
+              examples:
+                success:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 672cc3acbb8bb89e108ce5ec
+                      createdAt: '2024-11-07T13:42:04.546Z'
+                      name: Fashion Female
+                      updatedAt: '2024-11-07T13:43:46.688Z'
+                    message: Success delete category
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ''
+  /api/products:
+    get:
+      tags:
+        - products
+      summary: products
+      description: products
+      operationId: products
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: string
+            example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: string
+            example: '1'
+      responses:
+        '200':
+          description: success / after update
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '762'
+            Date:
+              schema:
+                type: string
+                example: Fri, 08 Nov 2024 14:23:08 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"2fa-4adFe6uYKMhJg9qQLre1+b7NSD0"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        __v:
+                          type: number
+                          example: 0
+                        _id:
+                          type: string
+                          example: 672e1d8d67f68c1a07655334
+                        category:
+                          type: object
+                          properties:
+                            __v:
+                              type: number
+                              example: 0
+                            _id:
+                              type: string
+                              example: 672cc50ebb8bb89e108ce5f6
+                            createdAt:
+                              type: string
+                              example: '2024-11-07T13:47:58.219Z'
+                            name:
+                              type: string
+                              example: Fashion Female
+                            updatedAt:
+                              type: string
+                              example: '2024-11-07T13:49:06.393Z'
+                        createdAt:
+                          type: string
+                          example: '2024-11-08T14:17:49.038Z'
+                        description:
+                          type: string
+                          example: daster
+                        images:
+                          type: array
+                          items: {}
+                          example: []
+                        name:
+                          type: string
+                          example: Abaya
+                        price:
+                          type: number
+                          example: 100000
+                        qty:
+                          type: number
+                          example: 10
+                        updatedAt:
+                          type: string
+                          example: '2024-11-08T14:17:49.038Z'
+                    example:
+                      - __v: 0
+                        _id: 672e1d8d67f68c1a07655334
+                        category:
+                          __v: 0
+                          _id: 672cc50ebb8bb89e108ce5f6
+                          createdAt: '2024-11-07T13:47:58.219Z'
+                          name: Fashion Female
+                          updatedAt: '2024-11-07T13:49:06.393Z'
+                        createdAt: '2024-11-08T14:17:49.038Z'
+                        description: daster
+                        images: []
+                        name: Abaya
+                        price: 100000
+                        qty: 10
+                        updatedAt: '2024-11-08T14:17:49.038Z'
+                      - __v: 0
+                        _id: 672e1e5758d68660a938d21d
+                        category:
+                          __v: 0
+                          _id: 672cc50ebb8bb89e108ce5f6
+                          createdAt: '2024-11-07T13:47:58.219Z'
+                          name: Fashion Female
+                          updatedAt: '2024-11-07T13:49:06.393Z'
+                        createdAt: '2024-11-08T14:21:11.860Z'
+                        description: daster
+                        images: []
+                        name: Abaya Gamis
+                        price: 100000
+                        qty: 10
+                        updatedAt: '2024-11-08T14:21:11.860Z'
+                  message:
+                    type: string
+                    example: Success get all products
+              examples:
+                after update:
+                  value:
+                    data:
+                      - __v: 0
+                        _id: 672e1d8d67f68c1a07655334
+                        category:
+                          __v: 0
+                          _id: 672cc50ebb8bb89e108ce5f6
+                          createdAt: '2024-11-07T13:47:58.219Z'
+                          name: Fashion Female
+                          updatedAt: '2024-11-07T13:49:06.393Z'
+                        createdAt: '2024-11-08T14:17:49.038Z'
+                        description: daster
+                        images: []
+                        name: Abaya
+                        price: 100000
+                        qty: 10
+                        updatedAt: '2024-11-08T14:17:49.038Z'
+                      - __v: 0
+                        _id: 672e1e5758d68660a938d21d
+                        category:
+                          __v: 0
+                          _id: 672cc50ebb8bb89e108ce5f6
+                          createdAt: '2024-11-07T13:47:58.219Z'
+                          name: Fashion Female
+                          updatedAt: '2024-11-07T13:49:06.393Z'
+                        createdAt: '2024-11-08T14:21:11.860Z'
+                        description: daster
+                        images: []
+                        name: Abaya Gamis Import
+                        price: 100000
+                        qty: 10
+                        updatedAt: '2024-11-08T14:22:57.599Z'
+                    message: Success get all products
+                success:
+                  value:
+                    data:
+                      - __v: 0
+                        _id: 672e1d8d67f68c1a07655334
+                        category:
+                          __v: 0
+                          _id: 672cc50ebb8bb89e108ce5f6
+                          createdAt: '2024-11-07T13:47:58.219Z'
+                          name: Fashion Female
+                          updatedAt: '2024-11-07T13:49:06.393Z'
+                        createdAt: '2024-11-08T14:17:49.038Z'
+                        description: daster
+                        images: []
+                        name: Abaya
+                        price: 100000
+                        qty: 10
+                        updatedAt: '2024-11-08T14:17:49.038Z'
+                      - __v: 0
+                        _id: 672e1e5758d68660a938d21d
+                        category:
+                          __v: 0
+                          _id: 672cc50ebb8bb89e108ce5f6
+                          createdAt: '2024-11-07T13:47:58.219Z'
+                          name: Fashion Female
+                          updatedAt: '2024-11-07T13:49:06.393Z'
+                        createdAt: '2024-11-08T14:21:11.860Z'
+                        description: daster
+                        images: []
+                        name: Abaya Gamis
+                        price: 100000
+                        qty: 10
+                        updatedAt: '2024-11-08T14:21:11.860Z'
+                    message: Success get all products
+    post:
+      tags:
+        - products
+      summary: product
+      description: product
+      operationId: product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  example: Deskripsi kemeja variant 3
+                name:
+                  type: string
+                  example: Kemeja Variant 3
+                price:
+                  type: number
+                  example: 1000
+                qty:
+                  type: number
+                  example: 100
+                slug:
+                  type: string
+                  example: variant-3-slug
+            examples:
+              product:
+                value:
+                  description: Deskripsi kemeja variant 3
+                  name: Kemeja Variant 3
+                  price: 1000
+                  qty: 100
+                  slug: variant-3-slug
+      responses:
+        '201':
+          description: success
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '182'
+            Date:
+              schema:
+                type: string
+                example: Thu, 07 Nov 2024 13:42:04 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"b6-wVy43ryOGabbdfYM+aW21LJ8Dyo"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 673dbbac5b100dc6a2efc25e
+                      createdAt:
+                        type: string
+                        example: '2024-11-20T10:36:28.955Z'
+                      description:
+                        type: string
+                        example: Deskripsi kemeja variant 3
+                      images:
+                        type: array
+                        items: {}
+                        example: []
+                      name:
+                        type: string
+                        example: Kemeja Variant 3
+                      price:
+                        type: number
+                        example: 1000
+                      qty:
+                        type: number
+                        example: 100
+                      updatedAt:
+                        type: string
+                        example: '2024-11-20T10:36:28.955Z'
+                  message:
+                    type: string
+                    example: Success create product
+              examples:
+                success:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 673dbbac5b100dc6a2efc25e
+                      createdAt: '2024-11-20T10:36:28.955Z'
+                      description: Deskripsi kemeja variant 3
+                      images: []
+                      name: Kemeja Variant 3
+                      price: 1000
+                      qty: 100
+                      updatedAt: '2024-11-20T10:36:28.955Z'
+                    message: Success create product
+      security:
+        - bearerAuth: []
+  /api/products/{id}:
+    get:
+      tags:
+        - products
+      summary: product by id
+      description: |
+        Generated from cURL: curl -X GET http://localhost:3000/api/categories/1
+      operationId: productById
+      responses:
+        '200':
+          description: success
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '190'
+            Date:
+              schema:
+                type: string
+                example: Thu, 07 Nov 2024 13:44:04 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"be-e3Vitjqb/Q54/FI6sAh8FypL5HE"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 672e1e5758d68660a938d21d
+                      category:
+                        type: object
+                        properties:
+                          __v:
+                            type: number
+                            example: 0
+                          _id:
+                            type: string
+                            example: 672cc50ebb8bb89e108ce5f6
+                          createdAt:
+                            type: string
+                            example: '2024-11-07T13:47:58.219Z'
+                          name:
+                            type: string
+                            example: Fashion Female
+                          updatedAt:
+                            type: string
+                            example: '2024-11-07T13:49:06.393Z'
+                      createdAt:
+                        type: string
+                        example: '2024-11-08T14:21:11.860Z'
+                      description:
+                        type: string
+                        example: daster
+                      images:
+                        type: array
+                        items: {}
+                        example: []
+                      name:
+                        type: string
+                        example: Abaya Gamis Import
+                      price:
+                        type: number
+                        example: 100000
+                      qty:
+                        type: number
+                        example: 10
+                      updatedAt:
+                        type: string
+                        example: '2024-11-08T14:22:57.599Z'
+                  message:
+                    type: string
+                    example: Success get one product
+              examples:
+                success:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 672e1e5758d68660a938d21d
+                      category:
+                        __v: 0
+                        _id: 672cc50ebb8bb89e108ce5f6
+                        createdAt: '2024-11-07T13:47:58.219Z'
+                        name: Fashion Female
+                        updatedAt: '2024-11-07T13:49:06.393Z'
+                      createdAt: '2024-11-08T14:21:11.860Z'
+                      description: daster
+                      images: []
+                      name: Abaya Gamis Import
+                      price: 100000
+                      qty: 10
+                      updatedAt: '2024-11-08T14:22:57.599Z'
+                    message: Success get one product
+    put:
+      tags:
+        - products
+      summary: product
+      description: product
+      operationId: product1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Fashion Female
+            examples:
+              product:
+                value:
+                  name: Fashion Female
+      responses:
+        '200':
+          description: success
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '189'
+            Date:
+              schema:
+                type: string
+                example: Thu, 07 Nov 2024 13:43:46 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"bd-sU/+HapQSKS2KX+LAm2hWCM9LPM"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 672e1e5758d68660a938d21d
+                      category:
+                        type: string
+                        example: 672cc50ebb8bb89e108ce5f6
+                      createdAt:
+                        type: string
+                        example: '2024-11-08T14:21:11.860Z'
+                      description:
+                        type: string
+                        example: daster
+                      images:
+                        type: array
+                        items: {}
+                        example: []
+                      name:
+                        type: string
+                        example: Abaya Gamis Import
+                      price:
+                        type: number
+                        example: 100000
+                      qty:
+                        type: number
+                        example: 10
+                      updatedAt:
+                        type: string
+                        example: '2024-11-08T14:22:57.599Z'
+                  message:
+                    type: string
+                    example: Success update product
+              examples:
+                success:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 672e1e5758d68660a938d21d
+                      category: 672cc50ebb8bb89e108ce5f6
+                      createdAt: '2024-11-08T14:21:11.860Z'
+                      description: daster
+                      images: []
+                      name: Abaya Gamis Import
+                      price: 100000
+                      qty: 10
+                      updatedAt: '2024-11-08T14:22:57.599Z'
+                    message: Success update product
+      security:
+        - bearerAuth: []
+    delete:
+      tags:
+        - products
+      summary: product by id
+      description: |
+        Generated from cURL: curl -X GET http://localhost:3000/api/categories/1
+      operationId: productById1
+      responses:
+        '200':
+          description: success
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '189'
+            Date:
+              schema:
+                type: string
+                example: Thu, 07 Nov 2024 13:44:20 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"bd-U4pQiFz4BjF8OE1yUzG6EbXRfUY"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 672cc3acbb8bb89e108ce5ec
+                      createdAt:
+                        type: string
+                        example: '2024-11-07T13:42:04.546Z'
+                      name:
+                        type: string
+                        example: Fashion Female
+                      updatedAt:
+                        type: string
+                        example: '2024-11-07T13:43:46.688Z'
+                  message:
+                    type: string
+                    example: Success delete category
+              examples:
+                success:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 672cc3acbb8bb89e108ce5ec
+                      createdAt: '2024-11-07T13:42:04.546Z'
+                      name: Fashion Female
+                      updatedAt: '2024-11-07T13:43:46.688Z'
+                    message: Success delete category
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          example: 672e1d2967f68c1a0765532f
+  /api/auth/register:
+    post:
+      tags:
+        - users
+      summary: register
+      description: register
+      operationId: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                confirmPassword:
+                  type: string
+                  example: '12341234'
+                email:
+                  type: string
+                  example: dea@mail.com
+                fullName:
+                  type: string
+                  example: Dea
+                password:
+                  type: string
+                  example: '12341234'
+                role:
+                  type: string
+                  example: admin
+                username:
+                  type: string
+                  example: dea2024
+            examples:
+              register:
+                value:
+                  confirmPassword: '12341234'
+                  email: dea@mail.com
+                  fullName: Dea
+                  password: '12341234'
+                  role: admin
+                  username: dea2024
+      responses:
+        '200':
+          description: register user / register admin
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '269'
+            Date:
+              schema:
+                type: string
+                example: Fri, 15 Nov 2024 10:37:05 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"10d-0Q8lsrQ2fZTVmBNVy0PXPlBZ6uU"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 67371e5e2240fef19772a969
+                      createdAt:
+                        type: string
+                        example: '2024-11-15T10:11:42.319Z'
+                      email:
+                        type: string
+                        example: dania@mail.com
+                      fullName:
+                        type: string
+                        example: Dania
+                      profilePicture:
+                        type: string
+                        example: user.jpg
+                      roles:
+                        type: array
+                        items:
+                          type: string
+                          example: user
+                        example:
+                          - user
+                      updatedAt:
+                        type: string
+                        example: '2024-11-15T10:11:42.319Z'
+                      username:
+                        type: string
+                        example: dania2024
+                  message:
+                    type: string
+                    example: registration success!
+              examples:
+                register admin:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 6737245175d0fb4ac845e3d4
+                      createdAt: '2024-11-15T10:37:05.825Z'
+                      email: dea@mail.com
+                      fullName: Dea
+                      profilePicture: user.jpg
+                      roles:
+                        - user
+                      updatedAt: '2024-11-15T10:37:05.825Z'
+                      username: dea2024
+                    message: registration success!
+                register user:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 67371e5e2240fef19772a969
+                      createdAt: '2024-11-15T10:11:42.319Z'
+                      email: dania@mail.com
+                      fullName: Dania
+                      profilePicture: user.jpg
+                      roles:
+                        - user
+                      updatedAt: '2024-11-15T10:11:42.319Z'
+                      username: dania2024
+                    message: registration success!
+  /api/auth/login:
+    post:
+      tags:
+        - users
+      summary: login
+      description: login
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: dania@mail.com
+                password:
+                  type: string
+                  example: '12341234'
+            examples:
+              login:
+                value:
+                  email: dania@mail.com
+                  password: '12341234'
+      responses:
+        '200':
+          description: success login
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '230'
+            Date:
+              schema:
+                type: string
+                example: Fri, 15 Nov 2024 10:12:25 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"e6-F5xduXm9mqay1Q6oz8HJxwKmzro"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: string
+                    example: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3M2IzMmNhYTE1YzY1NDY2MzI2MDM4YiIsInJvbGVzIjpbInVzZXIiXSwiaWF0IjoxNzMxOTMyODk0LCJleHAiOjE3MzE5MzY0OTR9.PWjVpSNu_TIk7QjEWia9zFkavxdgvlV2c8bSH-wop-I
+                  message:
+                    type: string
+                    example: login success
+              examples:
+                success login:
+                  value:
+                    data: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3M2IzMmNhYTE1YzY1NDY2MzI2MDM4YiIsInJvbGVzIjpbInVzZXIiXSwiaWF0IjoxNzMxOTMyODk0LCJleHAiOjE3MzE5MzY0OTR9.PWjVpSNu_TIk7QjEWia9zFkavxdgvlV2c8bSH-wop-I
+                    message: login success
+  /api/auth/me:
+    post:
+      tags:
+        - users
+      summary: profile
+      description: profile
+      operationId: profile
+      requestBody:
+        content:
+          application/json:
+            examples:
+              profile:
+                value: ''
+      responses:
+        '200':
+          description: e.g profile
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '280'
+            Date:
+              schema:
+                type: string
+                example: Fri, 15 Nov 2024 10:13:51 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"118-zMLJWoUbZIrSHNEgTh4VsMiT6iw"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 673b32caa15c65466326038b
+                      createdAt:
+                        type: string
+                        example: '2024-11-18T12:27:54.395Z'
+                      email:
+                        type: string
+                        example: momon@mail.com
+                      fullName:
+                        type: string
+                        example: Momon Kentang
+                      profilePicture:
+                        type: string
+                        example: user.jpg
+                      roles:
+                        type: array
+                        items:
+                          type: string
+                          example: user
+                        example:
+                          - user
+                      updatedAt:
+                        type: string
+                        example: '2024-11-18T12:27:54.395Z'
+                      username:
+                        type: string
+                        example: momonkentang
+                  message:
+                    type: string
+                    example: success fetch user profile
+              examples:
+                e.g profile:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 673b32caa15c65466326038b
+                      createdAt: '2024-11-18T12:27:54.395Z'
+                      email: momon@mail.com
+                      fullName: Momon Kentang
+                      profilePicture: user.jpg
+                      roles:
+                        - user
+                      updatedAt: '2024-11-18T12:27:54.395Z'
+                      username: momonkentang
+                    message: success fetch user profile
+      security:
+        - bearerAuth: []
+  /api/auth/update-profile:
+    put:
+      tags:
+        - users
+      summary: profile
+      description: profile
+      operationId: profile1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                confirmPassword:
+                  type: string
+                  example: '123412345'
+                password:
+                  type: string
+                  example: '123412345'
+            examples:
+              profile:
+                value:
+                  confirmPassword: '123412345'
+                  password: '123412345'
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+  /api/orders:
+    get:
+      tags:
+        - orders
+      summary: orders
+      description: orders
+      operationId: orders
+      requestBody:
+        content:
+          application/json:
+            examples:
+              orders:
+                value: ''
+      responses:
+        '200':
+          description: e.g order
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '280'
+            Date:
+              schema:
+                type: string
+                example: Fri, 15 Nov 2024 10:13:51 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"118-zMLJWoUbZIrSHNEgTh4VsMiT6iw"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        __v:
+                          type: number
+                          example: 0
+                        _id:
+                          type: string
+                          example: 673dfaec6a1d5fddf00f87f3
+                        createdAt:
+                          type: string
+                          example: '2024-11-20T15:06:20.541Z'
+                        createdBy:
+                          type: string
+                          example: 673b32caa15c65466326038b
+                        grandTotal:
+                          type: number
+                          example: 300000
+                        orderItems:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              _id:
+                                type: string
+                                example: 673dfaec6a1d5fddf00f87f0
+                              name:
+                                type: string
+                                example: Abaya Gamis Import
+                              price:
+                                type: number
+                                example: 100000
+                              productId:
+                                type: string
+                                example: 672e1e5758d68660a938d21d
+                              quantity:
+                                type: number
+                                example: 3
+                          example:
+                            - _id: 673dfaec6a1d5fddf00f87f0
+                              name: Abaya Gamis Import
+                              price: 100000
+                              productId: 672e1e5758d68660a938d21d
+                              quantity: 3
+                        status:
+                          type: string
+                          example: pending
+                        updatedAt:
+                          type: string
+                          example: '2024-11-20T15:06:20.541Z'
+                    example:
+                      - __v: 0
+                        _id: 673dfaec6a1d5fddf00f87f3
+                        createdAt: '2024-11-20T15:06:20.541Z'
+                        createdBy: 673b32caa15c65466326038b
+                        grandTotal: 300000
+                        orderItems:
+                          - _id: 673dfaec6a1d5fddf00f87f0
+                            name: Abaya Gamis Import
+                            price: 100000
+                            productId: 672e1e5758d68660a938d21d
+                            quantity: 3
+                        status: pending
+                        updatedAt: '2024-11-20T15:06:20.541Z'
+                  message:
+                    type: string
+                    example: Order fetched successfully
+              examples:
+                e.g order:
+                  value:
+                    data:
+                      - __v: 0
+                        _id: 673dfaec6a1d5fddf00f87f3
+                        createdAt: '2024-11-20T15:06:20.541Z'
+                        createdBy: 673b32caa15c65466326038b
+                        grandTotal: 300000
+                        orderItems:
+                          - _id: 673dfaec6a1d5fddf00f87f0
+                            name: Abaya Gamis Import
+                            price: 100000
+                            productId: 672e1e5758d68660a938d21d
+                            quantity: 3
+                        status: pending
+                        updatedAt: '2024-11-20T15:06:20.541Z'
+                    message: Order fetched successfully
+      security:
+        - bearerAuth: []
+    post:
+      tags:
+        - orders
+      summary: create
+      description: create
+      operationId: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                grandTotal:
+                  type: number
+                  example: 0
+                orderItems:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: Abaya Gamis Import
+                      price:
+                        type: number
+                        example: 100000
+                      productId:
+                        type: string
+                        example: 672e1e5758d68660a938d21d
+                      quantity:
+                        type: number
+                        example: 1
+                  example:
+                    - name: Abaya Gamis Import
+                      price: 100000
+                      productId: 672e1e5758d68660a938d21d
+                      quantity: 1
+            examples:
+              create:
+                value:
+                  grandTotal: 0
+                  orderItems:
+                    - name: Abaya Gamis Import
+                      price: 100000
+                      productId: 672e1e5758d68660a938d21d
+                      quantity: 1
+      responses:
+        '201':
+          description: success
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '391'
+            Date:
+              schema:
+                type: string
+                example: Wed, 20 Nov 2024 16:22:21 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"187-HCC4g/zDOPh5KAHbGUiUeHbed+k"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 673e0cbd2436099e194e811b
+                      createdAt:
+                        type: string
+                        example: '2024-11-20T16:22:21.968Z'
+                      createdBy:
+                        type: string
+                        example: 673e009286f422fafcb50f3f
+                      grandTotal:
+                        type: number
+                        example: 100000
+                      orderItems:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            _id:
+                              type: string
+                              example: 673e0cbd2436099e194e8118
+                            name:
+                              type: string
+                              example: Abaya Gamis Import
+                            price:
+                              type: number
+                              example: 100000
+                            productId:
+                              type: string
+                              example: 672e1e5758d68660a938d21d
+                            quantity:
+                              type: number
+                              example: 1
+                        example:
+                          - _id: 673e0cbd2436099e194e8118
+                            name: Abaya Gamis Import
+                            price: 100000
+                            productId: 672e1e5758d68660a938d21d
+                            quantity: 1
+                      status:
+                        type: string
+                        example: pending
+                      updatedAt:
+                        type: string
+                        example: '2024-11-20T16:22:21.968Z'
+                  message:
+                    type: string
+                    example: Order created successfully
+              examples:
+                success:
+                  value:
+                    data:
+                      __v: 0
+                      _id: 673e0cbd2436099e194e811b
+                      createdAt: '2024-11-20T16:22:21.968Z'
+                      createdBy: 673e009286f422fafcb50f3f
+                      grandTotal: 100000
+                      orderItems:
+                        - _id: 673e0cbd2436099e194e8118
+                          name: Abaya Gamis Import
+                          price: 100000
+                          productId: 672e1e5758d68660a938d21d
+                          quantity: 1
+                      status: pending
+                      updatedAt: '2024-11-20T16:22:21.968Z'
+                    message: Order created successfully
+      security:
+        - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: categories
+  - name: products
+  - name: users
+  - name: orders
