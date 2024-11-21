@@ -34,7 +34,7 @@ async function init() {
     }];
 
     // Set up Swagger UI
-    app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    app.use("", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
     app.use("/api", routes);
 
