@@ -37,6 +37,18 @@ export { orderSchema, TOrder, TOrderItem };
 
 export default {
   async createOrder(req: IRequestWithUser, res: Response) {
+    /**
+    #swagger.tags = ['Order']
+    #swagger.security = [{
+      "bearerAuth": []
+    }]
+    #swagger.requestBody = {
+      required: true,
+      schema: {
+        $ref: "#/components/schemas/CreateOrder"
+      }
+    }
+    */
     try {
       const id = req.user?.id;
       // Validate the incoming request body using Yup
@@ -103,6 +115,19 @@ export default {
     }
   },
   async getOrderDetail(req: IRequestWithUser, res: Response) {
+    /**
+    #swagger.tags = ['Order']
+    #swagger.security = [{
+      "bearerAuth": []
+    }]
+    #swagger.parameters['id'] = {
+      in: 'path',
+      description: 'The unique ID of the order to fetch details for.',
+      required: true,
+      type: 'string',
+      example: '60d21b9667d0d8992e610c85'
+    }
+    */
     try {
       const orderId = req.params.id;
       const id = req.user?.id;
@@ -115,7 +140,7 @@ export default {
           message: 'Order not found',
         });
       }
-      if (order.createdBy != id) {
+      if (order.createdBy._id != id) {
         return res.status(404).json({
           message: 'Unauthorized to see the details',
         });
@@ -135,6 +160,28 @@ export default {
   },
 
   async getOrders(req: IRequestWithUser, res: Response) {
+    /**
+    #swagger.tags = ['Order']
+    #swagger.security = [{
+      "bearerAuth": []
+    }]
+    #swagger.parameters['limit'] = {
+      in: 'query',
+      description: 'The number of orders to fetch per page.',
+      required: false,
+      type: 'integer',
+      default: 10,
+      example: 20
+    }
+    #swagger.parameters['page'] = {
+      in: 'query',
+      description: 'The page number to fetch.',
+      required: false,
+      type: 'integer',
+      default: 1,
+      example: 1
+    }
+    */
     try {
       const id = req.user?.id;
       const {

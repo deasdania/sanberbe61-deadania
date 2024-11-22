@@ -34,7 +34,7 @@ router.put("/categories/:id", admin, categoriesController.update);
 router.delete("/categories/:id", admin, categoriesController.delete);
 
 router.get("/products", productsController.findAll);
-router.post("/products", productsController.create);
+router.post("/products", admin, productsController.create);
 router.get("/products/:id", productsController.findOne);
 router.put("/products/:id", admin, productsController.update);
 router.delete("/products/:id", admin, productsController.delete);

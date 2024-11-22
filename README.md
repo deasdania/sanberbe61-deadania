@@ -27,3 +27,12 @@ Search `App passwords` for make it easier.
 ```
 MAIL_PASS=<the generated App Password>
 ```
+
+## Links
+vercel link: [https://sanberbe61-deadania.vercel.app](https://sanberbe61-deadania.vercel.app)
+
+swagger link: [https://sanberbe61-deadania.vercel.app/docs](https://sanberbe61-deadania.vercel.app/docs)
+
+youtube link: [video](https://youtu.be/1iA52DJ_cm8)
+
+linkedln link: [post](https://www.linkedin.com/posts/dea-dania-374244134_github-deasdaniasanberbe61-deadania-activity-7265769837136621570-IvoT?utm_source=share&utm_medium=member_desktop)

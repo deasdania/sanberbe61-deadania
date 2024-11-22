@@ -9,6 +9,10 @@
     {
       "url": "http://localhost:3000/api",
       "description": "Local Server"
+    },
+    {
+      "url": "https://sanberbe61-deadania.vercel.app/api",
+      "description": "Production Server"
     }
   ],
   "paths": {
@@ -139,6 +143,9 @@
     },
     "/categories": {
       "get": {
+        "tags": [
+          "Category"
+        ],
         "description": "",
         "parameters": [
           {
@@ -173,6 +180,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Category"
+        ],
         "description": "",
         "responses": {
           "201": {
@@ -180,12 +190,35 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCategory"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCategory"
+              }
+            }
           }
         }
       }
     },
     "/categories/{id}": {
       "get": {
+        "tags": [
+          "Category"
+        ],
         "description": "",
         "parameters": [
           {
@@ -194,7 +227,9 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "The unique ID of the category to fetch.",
+            "example": "60d21b9667d0d8992e610c85"
           }
         ],
         "responses": {
@@ -207,6 +242,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Category"
+        ],
         "description": "",
         "parameters": [
           {
@@ -224,10 +262,33 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCategory"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCategory"
+              }
+            }
           }
         }
       },
       "delete": {
+        "tags": [
+          "Category"
+        ],
         "description": "",
         "parameters": [
           {
@@ -236,7 +297,9 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "The unique ID of the category to delete.",
+            "example": "60d21b9667d0d8992e610c85"
           }
         ],
         "responses": {
@@ -246,11 +309,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/products": {
       "get": {
+        "tags": [
+          "Product"
+        ],
         "description": "",
         "parameters": [
           {
@@ -285,6 +356,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Product"
+        ],
         "description": "",
         "responses": {
           "201": {
@@ -292,12 +366,35 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProduct"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProduct"
+              }
+            }
           }
         }
       }
     },
     "/products/{id}": {
       "get": {
+        "tags": [
+          "Product"
+        ],
         "description": "",
         "parameters": [
           {
@@ -306,7 +403,9 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "The unique ID of the product to fetch.",
+            "example": "60d21b9667d0d8992e610c85"
           }
         ],
         "responses": {
@@ -316,9 +415,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       },
       "put": {
+        "tags": [
+          "Product"
+        ],
         "description": "",
         "parameters": [
           {
@@ -337,9 +444,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       },
       "delete": {
+        "tags": [
+          "Product"
+        ],
         "description": "",
         "parameters": [
           {
@@ -358,11 +473,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/upload": {
       "post": {
+        "tags": [
+          "Upload"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -371,11 +494,19 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/uploads": {
       "post": {
+        "tags": [
+          "Upload"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -384,11 +515,19 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/orders": {
       "post": {
+        "tags": [
+          "Order"
+        ],
         "description": "",
         "responses": {
           "201": {
@@ -403,23 +542,54 @@
           "500": {
             "description": "Internal Server Error"
           }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrder"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrder"
+              }
+            }
+          }
         }
       },
       "get": {
+        "tags": [
+          "Order"
+        ],
         "description": "",
         "parameters": [
           {
             "name": "limit",
             "in": "query",
+            "description": "The number of orders to fetch per page.",
+            "required": false,
+            "default": 10,
+            "example": 20,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
             "name": "page",
             "in": "query",
+            "description": "The page number to fetch.",
+            "required": false,
+            "default": 1,
+            "example": 1,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
@@ -440,11 +610,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/orders/{id}": {
       "get": {
+        "tags": [
+          "Order"
+        ],
         "description": "",
         "parameters": [
           {
@@ -453,7 +631,9 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "The unique ID of the order to fetch details for.",
+            "example": "60d21b9667d0d8992e610c85"
           }
         ],
         "responses": {
@@ -469,7 +649,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     }
   },
@@ -520,9 +705,14 @@
             "type": "string",
             "example": "123412341"
           },
-          "role": {
-            "type": "string",
-            "example": "user"
+          "roles": {
+            "type": "array",
+            "example": [
+              "user"
+            ],
+            "items": {
+              "type": "string"
+            }
           }
         },
         "xml": {
@@ -559,6 +749,86 @@
         },
         "xml": {
           "name": "UpdateProfileRequest"
+        }
+      },
+      "CreateCategory": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Fashion Female"
+          }
+        },
+        "xml": {
+          "name": "CreateCategory"
+        }
+      },
+      "CreateProduct": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Abaya import"
+          },
+          "description": {
+            "type": "string",
+            "example": "Deskripsi gamis variant terbaru"
+          },
+          "category": {
+            "type": "string",
+            "example": "672cc50ebb8bb89e108ce5f6"
+          },
+          "slug": {
+            "type": "string",
+            "example": "abaya-import"
+          },
+          "qty": {
+            "type": "number",
+            "example": 100
+          },
+          "price": {
+            "type": "number",
+            "example": 2000
+          }
+        },
+        "xml": {
+          "name": "CreateProduct"
+        }
+      },
+      "CreateOrder": {
+        "type": "object",
+        "properties": {
+          "grandTotal": {
+            "type": "number",
+            "example": 0
+          },
+          "orderItems": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "productId": {
+                  "type": "string",
+                  "example": "672e1e5758d68660a938d21d"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Abaya Gamis Import"
+                },
+                "price": {
+                  "type": "number",
+                  "example": 100000
+                },
+                "quantity": {
+                  "type": "number",
+                  "example": 1
+                }
+              }
+            }
+          }
+        },
+        "xml": {
+          "name": "CreateOrder"
         }
       }
     }

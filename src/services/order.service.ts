@@ -53,7 +53,7 @@ export const findAll = async (
 };
 
 export const findOne = async (id: string): Promise<Order | null> => {
-  const result = await OrderModel.findById(id).populate('orderItems.productId').populate('createdBy');
+  const result = await OrderModel.findById(id).populate('orderItems.productId', 'name').populate('createdBy');
   return result;
 };
 

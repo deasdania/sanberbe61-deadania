@@ -4,6 +4,12 @@ import { handleUpload } from "../utils/cloudinary";
 
 export default {
   async single(req: Request, res: Response) {
+    /**
+    #swagger.tags = ['Upload']
+    #swagger.security = [{
+      "bearerAuth": []
+    }]
+    */
     if (req?.file === undefined) {
       return res.status(400).send({
         message: "No file uploaded",
@@ -23,6 +29,12 @@ export default {
     }
   },
   async multiple(req: Request, res: Response) {
+    /**
+    #swagger.tags = ['Upload']
+    #swagger.security = [{
+      "bearerAuth": []
+    }]
+    */
     if (req.files === undefined || req.files?.length === 0) {
       return res.status(400).send({
         message: "No files uploaded",

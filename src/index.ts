@@ -18,7 +18,9 @@ async function init() {
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
-
+    app.get('/', (req, res) => {
+      res.redirect('/docs');
+    });
     app.use("/api", routes);
     docs(app);
 
