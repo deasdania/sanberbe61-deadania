@@ -59,6 +59,7 @@ export const me = async (userId: string): Promise<User> => {
   return user;
 };
 export const updateProfile = async (userId: ObjectId, updateUserData: User) => {
+  updateUserData.password = encrypt(updateUserData.password)
   const result = await UserModel.findByIdAndUpdate(
     userId,
     {

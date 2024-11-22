@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import CategoriesModel from "../models/categories.model";
 
 import {
   create,

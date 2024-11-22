@@ -16,7 +16,7 @@ const router = express.Router();
 router.post("/auth/login", authController.login);
 router.post("/auth/register", authController.register);
 
-router.post(
+router.get(
   "/auth/me",
   [authMiddleware, rbacMiddleware(["admin", "user"])],
   authController.me
